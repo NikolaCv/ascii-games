@@ -1,5 +1,5 @@
-#ifndef ZMIJA_H_INCLUDED
-#define ZMIJA_H_INCLUDED
+#ifndef SNAKE_H_INCLUDED
+#define SNAKE_H_INCLUDED
 
 typedef struct Snake
 {
@@ -27,4 +27,4 @@ class zmija
 	//	~zmija();
 };
 
-#endif // ZMIJA_H_INCLUDED
+#endif // SNAKE_H_INCLUDED

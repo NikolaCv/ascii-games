@@ -8,8 +8,8 @@
 #include <iomanip>
 #include "Minesweeper.h"
 #include "Minesweeper.cpp"
-#include "Zmija.h"
-#include "Zmija.cpp"
+#include "Snake.h"
+#include "Snake.cpp"
 
 int menu()
 {
