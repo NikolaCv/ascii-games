@@ -117,7 +117,6 @@ void zmija::move()
 
 void zmija::pravac()
 {
-	char c;
 	if(kbhit())
 	{
 		c=getch();
