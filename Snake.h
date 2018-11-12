@@ -15,6 +15,7 @@ class zmija
 		int d, dir, eat ;
 		float speed, speedlim ;
 		char z ;
+		bool pobeda ;
 	public:
 		zmija();
 		void draw();
@@ -24,6 +25,9 @@ class zmija
 		void eatf();
 		void pravac();
 		void gameoverprint();
+		bool pobedaf();
+		void pobedaprint();
+
 	//	~zmija();
 };
 

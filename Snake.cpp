@@ -11,10 +11,10 @@ zmija::zmija()
 {
 	float s;
 	cout<<"Dobrodosli u zmijicu!"<<endl;
-	cout<<"Unesite velicinu mape, vecu od 10x10. Sto je mapa veca to manje bodova dobijate."<<endl;
+	cout<<"Unesite velicinu mape, vecu od 5x5. Sto je mapa veca to manje bodova dobijate."<<endl;
 	cout<<"Sirina: "; cin>>m;
 	cout<<"Visina: "; cin>>n;
-	while(m<10 || n<10)
+	while(m<5 || n<5)
 	{
 		cout<<"Unesite validne brojeve!"<<endl;
 		cout<<"Sirina: "; cin>>m;
@@ -57,6 +57,7 @@ zmija::zmija()
 	d=1;
 	dir=0;
 	z=219;
+	pobeda = false ;
 }
 
 /*zmija::~zmija()
@@ -149,22 +150,42 @@ void zmija::food()
 {
 	bool t=false;
 	int a,b;
-	while(!t)
+	if( d <= n*m)
 	{
-		a=rand()%n+1;
-		b=rand()%m+1;
-		for(int i=0; i<=d; ++i)
-		if(snake[i].x!=a || snake[i].y!=b)
-		t=true;
-		else
+		while(!t)
 		{
-			t=false;
-			break;
+			a=rand()%n+1;
+			b=rand()%m+1;
+			for(int i=0; i<=d; ++i)
+			if(snake[i].x!=a || snake[i].y!=b)
+			t=true;
+			else
+			{
+				t=false;
+				break;
+			}
 		}
+		xf=a;
+		yf=b;
+		mapa[xf][yf]='%';
 	}
-	xf=a;
-	yf=b;
-	mapa[xf][yf]='%';
+	else
+	pobeda = true ;
+}
+
+bool zmija::pobedaf()
+{
+	if( pobeda ) return 1;
+	return 0;
+}
+
+void zmija::pobedaprint()
+{
+	draw();
+	cout << endl ;
+	cout << "YOU  WON !!!" << endl ;
+	cout<<"Score: "<<setprecision(2)<<fixed<<1.0*(d-1)/(m*n)*(600-speed)<<"\t"<<"Duzina: "<<d-1<<endl;
+	Sleep(3000);
 }
 
 bool zmija::gameover()

@@ -99,6 +99,12 @@ int main()
 							zmijica.gameoverprint();
 							break;
 						}
+						else
+						if(zmijica.pobedaf())
+						{
+							zmijica.pobedaprint();
+							break;
+						}
 					}
 						cout<<endl;
 						system("pause");
