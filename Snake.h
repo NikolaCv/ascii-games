@@ -27,8 +27,8 @@ class zmija
 		void gameoverprint();
 		bool pobedaf();
 		void pobedaprint();
-
 	//	~zmija();
 };
 
 #endif // SNAKE_H_INCLUDED
+

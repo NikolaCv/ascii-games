@@ -29,3 +29,4 @@ class minesweeper
 };
 
 #endif // MINESWEEPER_H_INCLUDED
+

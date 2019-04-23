@@ -6,6 +6,7 @@
 #include <conio.h>
 #include <windows.h>
 #include <iomanip>
+#include "Minesweeper.h"
 
 using namespace std;
 
@@ -34,8 +35,8 @@ void minesweeper::reset()
 			o[i][j]=0;
 		}
 }
-
-/*minesweeper::~minesweeper()
+/*
+minesweeper::~minesweeper()
 {
 	for(int i=0; i<n; ++i)
 	{
@@ -50,59 +51,33 @@ void minesweeper::otvori_advanced(int x1, int y1)
 	int p=0;
 	for(int i=x1-1; i<=x1+1; ++i)
 		for(int j=y1-1; j<=y1+1; ++j)
-		if((!i!=x1 || !j!=y1) && o[i][j]==2) s++;
+		if((i!=x1 || j!=y1) && o[i][j]==2) s++;
 
 	if(s==mapa[x1][y1])
 	{
-		s=0;
-		for(int i=x1-1; i<=x1+1; ++i)
-			for(int j=y1-1; j<=y1+1; ++j)
-			if(o[i][j]==0 && x>0 && y>0 && y<=m && x<=n) p++;
-		pobeda-=p;
-		for(int i=x1-1; i<=x1+1; ++i)
-			for(int j=y1-1; j<=y1+1; ++j)
-			if((!i!=x1 || !j!=y1) && o[i][j]==2 && x>0 && y>0 && y<=m && x<=n) s++;
-			pobeda+=8-s;
-		if(o[x1-1][y1-1]!=2)
-		{
-			o[x1-1][y1-1]=0;
+		if(o[x1-1][y1-1]==0)
 			otvori(x1-1,y1-1);
-		}
-		if(o[x1-1][y1]!=2)
-		{
-			o[x1-1][y1]=0;
+
+		if(o[x1-1][y1]==0)
 			otvori(x1-1,y1);
-		}
-		if(o[x1-1][y1+1]!=2)
-		{
-			o[x1-1][y1+1]=0;
+
+		if(o[x1-1][y1+1]==0)
 			otvori(x1-1,y1+1);
-		}
-		if(o[x1][y1-1]!=2)
-		{
-			o[x1][y1-1]=0;
+
+		if(o[x1][y1-1]==0)
 			otvori(x1,y1-1);
-		}
-		if(o[x1][y1+1]!=2)
-		{
-			o[x1][y1+1]=0;
+
+		if(o[x1][y1+1]==0)
 			otvori(x1,y1+1);
-		}
-		if(o[x1+1][y1-1]!=2)
-		{
-			o[x1+1][y1-1]=0;
+
+		if(o[x1+1][y1-1]==0)
 			otvori(x1+1,y1-1);
-		}
-		if(o[x1+1][y1]!=2)
-		{
-			o[x1+1][y1]=0;
+
+		if(o[x1+1][y1]==0)
 			otvori(x1+1,y1);
-		}
-		if(o[x1+1][y1+1]!=2)
-		{
-			o[x1+1][y1+1]=0;
+
+		if(o[x1+1][y1+1]==0)
 			otvori(x1+1,y1+1);
-		}
 	}
 
 
@@ -211,7 +186,7 @@ void minesweeper::setup()
 		cout<<"MENU"<<endl;
 		cout<<"Space\t\tOtvorite polje"<<endl;
 		char c;
-		c=getch();
+		c=_getch();
 		if(c=='8' && x>1) x--;
 		else
 		if(c=='5' || c=='2' && x<n) x++;
@@ -257,7 +232,7 @@ void minesweeper::input()
 	cout<<"F\t\tPostavite zastavicu"<<endl;
 	cout<<"Space\t\tOtvorite polje"<<endl;
 	char c;
-	c=getch();
+	c=_getch();
 	if(c=='8' && x>1) x--;
 	else
 	if((c=='5' || c=='2') && x<n) x++;
@@ -347,3 +322,4 @@ void minesweeper::gameoverprint()
 	cout<<f<<"\t\tTacno obelezena mina"<<endl;
 	Sleep(3000);
 }
+

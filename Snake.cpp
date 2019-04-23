@@ -6,6 +6,9 @@
 #include <conio.h>
 #include <windows.h>
 #include <iomanip>
+#include "Snake.h"
+
+using namespace std;
 
 zmija::zmija()
 {
@@ -118,9 +121,9 @@ void zmija::move()
 
 void zmija::pravac()
 {
-	if(kbhit())
+	if(_kbhit())
 	{
-		c=getch();
+		c=_getch();
 		if((c=='8') && snake[2].x!=x-1) dir=1;
 		else
 		if((c=='6') && snake[2].y!=y+1) dir=2;
@@ -205,3 +208,4 @@ void zmija::gameoverprint()
 	cout<<"Score: "<<setprecision(2)<<fixed<<1.0*(d-1)/(m*n)*(600-speed)<<"\t"<<"Duzina: "<<d-1<<endl;
 	Sleep(3000);
 }
+

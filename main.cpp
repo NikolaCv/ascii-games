@@ -7,9 +7,11 @@
 #include <windows.h>
 #include <iomanip>
 #include "Minesweeper.h"
-#include "Minesweeper.cpp"
 #include "Snake.h"
-#include "Snake.cpp"
+//#include "Minesweeper.cpp"
+//#include "Snake.cpp"
+
+using namespace std;
 
 int menu()
 {
@@ -117,3 +119,4 @@ int main()
 	cout<<endl<<"Hvala na igranju!"<<endl;
 	system("pause");
 }
+
