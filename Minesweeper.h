@@ -4,8 +4,8 @@
 class minesweeper
 {
 	private:
-		int o[100][100] ;
-		int mapa[100][100] ;
+		int o[100][100];
+		int mapa[100][100];
 		int n, m, x, y;
 		char p, f, mc, nt, z;
 		int mina, pobeda, flags;

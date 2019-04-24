@@ -9,13 +9,13 @@ typedef struct Snake
 class zmija
 {
 	private:
-		int n, m, x, y, xf, yf ;
-		char mapa[100][100], c ;
-		Snake snake[10000] ;
-		int d, dir, eat ;
-		float speed, speedlim ;
-		char z ;
-		bool pobeda ;
+		int n, m, x, y, xf, yf;
+		char mapa[100][100], c;
+		Snake snake[10000];
+		int d, dir, eat;
+		float speed, speedlim;
+		char z;
+		bool pobeda;
 	public:
 		zmija();
 		void draw();
